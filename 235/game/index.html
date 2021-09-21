@@ -32,7 +32,7 @@
 
     <style>
         body {
-            background-color: #FBFEFA;
+            background-color: #B4341F;
             font-family: Arial, sans-serif;
             color: #2E1E0F;
         }
@@ -49,8 +49,20 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        p, h2, ul {
+        p,
+        h2,
+        ul {
             margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        main,
+        header,
+        footer {
+            margin: 0 auto;
+            width: 80vw;
+            padding: 1rem;
+            background-color: #FBFEFA;
         }
 
         hr {
@@ -66,15 +78,21 @@
 
         img.side {
             float: right;
-            margin: 0 12px;
+            margin-left: 12px;
         }
 
         a:link {
-            color:#457B9D;
+            color: #457B9D;
         }
 
         a:visited {
-            color:#54426B;
+            color: #54426B;
+        }
+
+        #thumb {
+            width: 300px;
+            border: 4px solid #457B9D;
+            border-radius: 2px;
         }
 
         /* { border: 1px solid gray; } */
@@ -93,15 +111,15 @@
         </h1>
 
         <div id="publish">
-        <h2>Publishing Info</h2>
+            <h2>Publishing Info</h2>
 
-        <ul>
-            <li>Published by: Atari, <abbr title="Incorporated">Inc.</abbr></li>
-            <li>Developed by: <abbr title="Nakamura Manufacturing Company">Namco</abbr> Limited</li>
-            <li>Released: <abbr title="April">Apr</abbr>, 1982</li>
-        </ul>
+            <ul>
+                <li>Published by: Atari, <abbr title="Incorporated">Inc.</abbr></li>
+                <li>Developed by: <abbr title="Nakamura Manufacturing Company">Namco</abbr> Limited</li>
+                <li>Released: <abbr title="April">Apr</abbr>, 1982</li>
+            </ul>
         </div>
-        
+
         <hr>
     </header>
 
@@ -113,7 +131,7 @@
 
             <img class="side" src="images/fygar_inflate.png" alt="Taizo Hori inflating Fygar">
             <a href="big/pic1.html">
-                <img class="side" src="images/dig-dug-big_thumb.jpg" alt="Dig dug thumbnail">
+                <img class="side" id="thumb" src="images/dig-dug-big_thumb.jpg" alt="Dig dug thumbnail">
             </a>
         </p>
 
@@ -138,20 +156,19 @@
         <blockquote>
             This <em>definitely</em> goes under the heading of "Games That Were Made While a Programmer Was on
             Drugs,"<br> or at least had a good imagination. And maybe they were into horror movies too.<br>
-            -- <a
-                href="https://www.mobygames.com/mobyrank/source/sourceId,540/">https://www.mobygames.com/mobyrank/source/sourceId,540/</a>
+            -- <a href="https://www.mobygames.com/mobyrank/source/sourceId,540/">
+                https://www.mobygames.com/mobyrank/source/sourceId,540/</a>
         </blockquote>
-
-        <hr>
     </main>
 
     <footer>
+        <hr>
         <div id="Source">
             <h2>Source</h2>
             <p><a href="https://www.mobygames.com/game/arcade/dig-dug"
                     target="_blank">https://www.mobygames.com/game/arcade/dig-dug</a></p>
         </div>
     </footer>
-    </body>
+</body>
 
 </html>
