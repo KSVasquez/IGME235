@@ -5,23 +5,24 @@
     <meta charset="utf-8">
     <title>Dig Dug</title>
 
-    <style>
-        h1 {
-            color: red;
-            font-family: sans-serif;
-            border-bottom: 1px solid blue;
-        }
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
 
-        blockquote {
-            background-color: lightgray;
-            padding: 1rem;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <header>
-        <h1>Dig Dug</h1>
+        <h1>
+            <object data="images/dig-dug.svg" height="75">
+                <img src="images/dig-dug.png" alt="Dig Dug" height="60">
+            </object>
+            Dig Dug
+        </h1>
 
         <h2>Publishing Info</h2>
         <ul>
@@ -34,7 +35,11 @@
 
     <main>
         <h2>Description</h2>
-        <img src="dig-dug-burnt.png" alt="Screenshot of Dig Dug">
+        <div class="images">
+            <img src="images/dig-dug-burnt.png" alt="Screenshot of Dig Dug">
+            <a href="big/pic1.html"><img src="images/dig-dug-flyer-thumb.png" alt="Dig Dug"></a>
+            <img src="images/fygar_inflate.png" alt="Inflating a Fygar" class="over">
+        </div>
         <p>
             <strong>Dig Dug</strong> is a 1-2 player arcade game in which you have to use your shovel to dig your way
             through the earth. <br>
@@ -57,18 +62,21 @@
         <blockquote>
             This <em>definitely</em> goes under the heading of "Games That Were Made While a Programmer Was on Drugs,"
             or at least had a good imagination. And maybe they were into horror movies too. <br>
-            -- https://www.mobygames.com/mobyrank/source/sourceId,540/
+            -- <a href="https://www.mobygames.com/mobyrank/source/sourceId,540/">
+                https://www.mobygames.com/mobyrank/source/sourceId,540/</a>
         </blockquote>
     </main>
     <hr>
 
     <footer>
-        <h2>Source</h2>
         <div id="Source">
-            <p>
-                <a href="https://www.mobygames.com/game/arcade/dig-dug">
-                    https://www.mobygames.com/game/arcade/dig-dug</a>
-            </p>
+            <h2>Source</h2>
+            <ul>
+                <li><a href="https://www.mobygames.com/game/arcade/dig-dug" target="_blank">
+                        https://www.mobygames.com/game/arcade/dig-dug</a></li>
+                <li><a href="https://flyers.arcade-museum.com/?page=flyer&db=videodb&id=302&image=1">
+                        https://flyers.arcade-museum.com/?page=flyer&db=videodb&id=302&image=1</a></li>
+            </ul>
         </div>
     </footer>
 </body>

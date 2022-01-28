@@ -1,0 +1,60 @@
+/* * {
+    border: 1px solid grey
+} */
+
+body {
+    background-color:#D6EDFF;
+    font-family: Arial, sans-serif;
+    color: #565264;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h1 {
+    color: #7D5BA6;
+    border-bottom: 1px solid #565264;
+}
+
+h2 {
+    color: #FF6978;
+}
+
+h1,h2 {
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+blockquote {
+    background-color: whitesmoke;
+    padding: 1rem;
+}
+
+hr {
+    height: 1px;
+    background-color: #188FA7;
+    border: none;
+}
+
+img.over {
+    float: right;
+}
+
+#Source {
+    background-color: #565264;
+    padding: 1px 1rem;
+}
+
+a:link {
+    color: #188FA7;
+}
+a:visited {
+    color: #FF99A5;
+}
+a:focus {
+    color: whitesmoke;
+}
+a:hover {
+    color: #1B998B;
+}
+a:active {
+    color: #C5D86D;
+}
