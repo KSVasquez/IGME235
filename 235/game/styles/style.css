@@ -1,15 +1,15 @@
-/* * {
-    border: 1px solid grey
-} */
-
 body {
-    background-color:#D6EDFF;
+    background-color: #188FA7;
     font-family: Arial, sans-serif;
     color: #565264;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
+main, header, footer {
+    background-color:#D6EDFF;
+    margin: 0 auto;
+    width: 80vw;
+    padding: 10px 1em;
+}
 h1 {
     color: #7D5BA6;
     border-bottom: 1px solid #565264;
@@ -40,6 +40,7 @@ img.over {
 
 #Source {
     background-color: #565264;
+    color: whitesmoke;
     padding: 1px 1rem;
 }
 
@@ -50,7 +51,7 @@ a:visited {
     color: #FF99A5;
 }
 a:focus {
-    color: whitesmoke;
+    color: #D6EDFF;
 }
 a:hover {
     color: #1B998B;
