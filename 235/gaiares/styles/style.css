@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 9vw;
+    margin-right: 9vw;
+    background-color: whitesmoke;
+    color: darkslategrey;
+}
+
+p, ul, blockquote, div.gallery {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+h1 {
+    background-color: darkorchid;
+    color: white;
+    padding: 1rem;
+}
+
+h2 {
+    border-bottom: 1px solid lightgrey;
+    color: darkslateblue;
+}
+
+blockquote {
+    background-color: lightgray;
+    padding: 1rem;
+}
+
+#cover {
+    width: 200px;
+}
