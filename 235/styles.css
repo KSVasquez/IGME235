@@ -1,0 +1,91 @@
+body {
+    font-family: 'Murecho', 'Calibri', sans-serif;
+    background-color: #3B3355;
+    color: #5E4352;
+    margin: 0;
+}
+
+main {
+    background-color: #F5EFED;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+}
+@media only screen and (min-width: 600px) {
+    main {
+        width: 80vw;
+    }
+}
+
+p,ul {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+h1 {
+    font-family: 'M PLUS 2', 'Calibri Light', sans-serif;
+    font-weight: normal;
+    color: #F5EFED;
+    background-color: #9B7EDE;
+    margin: auto 0 1rem;
+    padding: 0.5rem 1rem;
+}
+
+h2 {
+    font: 'Zen Kaku Gothic New', 'Calibri Light', sans-serif;
+    font-weight: normal;
+    color: #000505;
+    border-left: solid 4px #F56476;
+    background-color: #F99FAA;
+    margin: auto 0 1rem;
+    padding: 0 1rem;
+}
+
+figure img {
+    width: 100%;
+}
+figcaption {
+    font-style: italic;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.flextext {
+    min-width: 60%;
+    flex: 1 1 0;
+}
+.fleximg {
+    margin: 0;
+    flex: 1 1 0;
+}
+#portrait {
+    min-width: 270px;
+    max-width: 360px;
+}
+#rock {
+    max-width: 240px;
+    min-width: 180px;
+}
+
+a:link {
+    color: #9B7EDE;
+}
+a:visited {
+    color: #3B345B;
+}
+a:focus {
+    color: #71816D;
+}
+a:hover {
+    color: #F56476;
+}
+a:active {
+    color: #FF1F4F;
+}
