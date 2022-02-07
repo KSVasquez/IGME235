@@ -1,0 +1,31 @@
+body {
+    width: 80vw;
+    margin: 1em auto;
+}
+
+h2,h3 {
+    border-bottom: thin solid red;
+    clear: both;
+}
+
+footer {
+    clear: both;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+}
+
+figure {
+    float: right;
+    width: 40%;
+    margin: 0 0 0 1em;
+}
+figure img {
+    width: 100%;
+}
+
+.tet {
+    float: left;
+    width: 30em;
+    outline: thin solid blue;
+}

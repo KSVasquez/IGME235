@@ -1,0 +1,41 @@
+header, main, footer {
+    width: 90vw;
+    margin: 1em auto;
+}
+
+figure {
+    max-width: 650px;
+    margin: 0 auto;
+}
+figure img {
+    width: 100%;
+}
+
+#tetlist {
+    display: flex;
+    flex-flow: row wrap;
+}
+.tet {
+    flex: 0 1 450px;
+    border: 1px solid black;
+    text-align: center;
+}
+.tet img {
+    width: 60%;
+}
+.square img {
+    width: 40%;
+}
+.long img {
+    width: 80%;
+}
+
+.name {
+    display: block;
+    font-weight: bold;
+    margin: 1em 0;
+}
+.aliases {
+    text-align: left;
+    margin: 1em;
+}
