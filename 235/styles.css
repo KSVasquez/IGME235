@@ -32,7 +32,7 @@ h1 {
 }
 
 h2 {
-    font: 'Zen Kaku Gothic New', 'Calibri Light', sans-serif;
+    font-family: 'Zen Kaku Gothic New', 'Calibri Light', sans-serif;
     font-weight: normal;
     color: #000505;
     border-left: solid 4px #F56476;
