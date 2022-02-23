@@ -1,0 +1,209 @@
+/* Fonts ========================================================= */
+@font-face {
+    font-family: 'Dogica Pixel';
+    src: url('../fonts/dogicapixel-webfont.woff2') format('woff2'),
+         url('../fonts/dogicapixel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Retro Computer';
+    src: url('../fonts/retro_computer_personal_use-webfont.woff2') format('woff2'),
+         url('../fonts/retro_computer_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body ========================================================== */
+html {
+    font-size: 10pt;
+}
+@media screen and (min-width:400px) {
+    html {
+        font-size: 12pt;
+    }
+}
+body {
+    font-family: 'Dogica Pixel', sans-serif;
+    background-color: #35363d;
+    color: white;
+    line-height: 1.1;
+}
+
+/* Margin ======================================================== */
+section {
+    margin: 40px 0;
+}
+header, footer {
+    padding: 0 1rem;
+}
+@media screen and (min-width: 600px) {
+    section {
+        margin: 40px 8.5vw 40px 7.5vw;
+    }
+    header, footer {
+        padding: 0 8.5vw 0 7.5vw;
+    }
+}
+
+/* Headings ====================================================== */
+h1, h2, h3 {
+    font-family: 'Retro Computer', sans-serif;
+}
+h1 {
+    font-size: 32pt;
+    margin: 1rem 0;
+}
+h2 {
+    font-size: 24pt;
+    margin-bottom: 1em;
+}
+h3 {
+    font-size: 18pt;
+}
+
+/* Header ======================================================== */
+header {
+    font-family: 'Retro Computer', sans-serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0 1em;
+    background-color: #686868;
+}
+header #axe {
+    height: 1em;
+}
+header #subtitle {
+    text-align: right;
+}
+
+/* Image ========================================================= */
+#valley {
+    background-image: url(../assets/valley.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vw;
+}
+@media screen and (min-width: 600px) {
+    #valley {
+        height: 44vw;
+    }
+}
+
+/* Footer ======================================================== */
+footer {
+    font-family: 'Retro Computer', sans-serif;
+    font-size: 12pt;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 4em;
+    background-image: url(../assets/trees.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 25vh;
+    border-top: 9px solid white;
+}
+@media screen and (min-width: 600px) {
+    footer {
+        font-size: 20pt;
+    }
+}
+
+footer div {
+    flex: 12 0 0;
+    min-width: 15em;
+}
+footer #copyright {
+    flex: 15 0 0;
+    text-align: right;
+    line-height: 1.2;
+}
+
+/* Pair Class ==================================================== */
+.pair {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.pair > div {
+    flex: 1 1 auto;
+}
+.pair .text {
+    padding: 1em;
+    background-color: #686868;
+}
+.pair .image {
+    padding: 3rem;
+    border: 9px solid white;
+    background-color: #324e44;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.pair .image img {
+    max-width: 100%;
+}
+@media screen and (min-width: 400px) {
+    .pair > div {
+        width: calc(50% - 1em);
+        max-width: 51em;
+        min-width: 20em;
+    }
+    .pair .text {
+        padding: 2em;
+    }
+    .pair .image {
+        min-width: 25rem;
+    }
+}
+
+/* Tree Section ================================================== */
+#oaktree {
+    gap: 20px;
+}
+#oaktree #tree {
+    background-image: linear-gradient(to bottom right, #e8fdf5 , #244d3e);
+}
+@media screen and (min-width: 400px) {
+    #oaktree .text {
+        padding: 2em 3em;
+    }
+}
+
+/* Materials Section ============================================= */
+#materials {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 40px 25px;
+}
+@media screen and (min-width: 790px) {
+    #materials {
+        gap: 20px 25px;
+    }
+}
+@media screen and (min-width: 1300px) {
+    #materials {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+#materials .pair > div {
+    min-width: 14em;
+}
+#materials .image{
+    padding: 3vw 4vw;
+    text-align: center;
+}
+#sticks img{
+    width: 300px;
+}
