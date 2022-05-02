@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Medieval Sharp';
+    src: url('medievalsharp-regular-webfont.woff2') format('woff2'),
+         url('medievalsharp-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    font-family: 'Medieval Sharp', serif;
+    font-size: 12pt;
+}
+h1 {
+    font-size: 16pt;
+}
+@media screen and (min-width: 400px) {
+    :root {
+        font-size: 12pt;
+    }
+    h1 {
+        font-size: 24pt;
+    }
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+body {
+    background-color: seashell;
+    display: grid;
+    grid-template-areas: 
+        "mt"
+        "content"
+        "ml"
+    ;
+    grid-template-rows: 1fr 600px 1.5fr;
+}
+@media screen and (min-width: 600px) {
+    body {
+        grid-template-areas: 
+            "ml     mt      mr"
+            "ml     content mr"
+            "ml     mb      mr"
+        ;
+        grid-template-columns: 1fr 600px 1fr;
+        grid-template-rows: 1fr 600px 1.5fr;
+    }
+}
+
+main {
+    grid-area: content;
+    display: flex;
+    flex-flow: column nowrap;
+    color: white;
+}
+@media screen and (min-width: 600px) {
+    main {
+        box-shadow: 30px 30px mediumslateblue;
+    }
+}
+
+header {
+    background-color: seagreen;
+}
+h1 {
+    font-weight: normal;
+    color: white;
+    padding: 0 1em;
+}
+
+#capybara {
+    flex: auto;
+    background-image: url(capybara.jpg);
+    background-position: top center;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#interact {
+    flex: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+#generated {
+    flex: auto;
+    align-self: stretch;
+    padding: 0.5em;
+    font-size: 2rem;
+    margin: 1em;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+#generated em {
+    font-style: normal;
+    text-shadow: 2px 2px mediumslateblue;
+}
+button {
+    font-family: 'Medieval Sharp', serif;
+    font-size: 1.2rem;
+    padding: 0.3em 1em;
+    margin: 0.3em;
+    border: none;
+    border-radius: 2em;
+    color: white;
+    background-color: seagreen;
+    text-align: center;
+    transition: background-color 0.2s linear;
+}
+button:hover {
+    background-color: mediumslateblue;
+    cursor: pointer;
+}
+button:active {
+    background-color: lightsteelblue;
+    cursor: pointer;
+}
+@media all and (max-width:30em) {
+    button {
+        display:block;
+        margin:0.2em auto;
+    }
+}
+
+footer {
+    padding: 0 1em;
+    text-align: center;
+}

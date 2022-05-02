@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="media/styles.css">
+    <script>
+        let phrases = [
+            "Horses go neigh. Thus, one may say <em>neigh</em> in order to transform into a horse.",
+            "<em>One</em> can of soup is equivalent to <em>two</em> mugs of soup.",
+            "You <em>do not</em> recognize the bodies in the water.",
+            "Receita Criativa: Aprenda A Fazer Pão Em <em>Forma De Capivara</em>",
+            "You can take the ducks from the park. <em>They're free</em>. Who is going to stop you? <em>God?</em>"
+        ]
+        window.onload = init;
+        previous = 0;
+
+        function init() {
+            let button = document.querySelector("button");
+            button.onclick = generatePhrase;
+            generatePhrase();
+        }
+
+        function generatePhrase() {
+            let rand = previous
+            while (rand == previous) {
+                rand = Math.floor(Math.random() * phrases.length);
+            }
+            let phrase = document.querySelector("#generated p");
+            phrase.innerHTML = phrases[rand];
+            previous = rand;
+        }
+    </script>
+    <title>Lord Capybara Consultation</title>
+</head>
+
+<body>
+    <main id="content">
+        <header>
+            <h1>O wise Capybara, Lord of the Pigs of Guinea, of what knowledge dost thou bestow upon us?</h1>
+        </header>
+        <div id="capybara">
+            <div id="interact">
+                <div id="generated">
+                    <p></p>
+                </div>
+                <button type="button">Enlighten Me!</button>
+            </div>
+            <footer>
+                <p>Copyright 2022 KS Vasquez</p>
+            </footer>
+        </div>
+    </main>
+</body>
+
+</html>
