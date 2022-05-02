@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>WAL4</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorites</h1>
+    <h2>My Favorite Colors</h2>
+
+    <ol id="colorsList">
+
+    </ol>
+
+    <h2>My Favorite Foods</h2>
+
+    <ol id="foodsList">
+
+    </ol>
+
+    <h2>My Favorite Links</h2>
+
+    <ol id="linksList">
+
+    </ol>
+
+    <script>
+        "use strict";
+        let colors = ["purple", "cyan", "pink", "yellow"];
+        let foods = ["spaghetti", "sushi", "flan", "soup"]; // add some foods
+
+        createList(document.querySelector("#colorsList"), colors);
+        createList(document.querySelector("#foodsList"), foods);
+
+        // Optional - can you figure out how to pull both the key AND the value
+        // from the `links` object literal?
+        let links = {
+            "Sumerian Dictionary": "http://psd.museum.upenn.edu/",
+            "Unusual Articles": "https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles",
+            "One Million Pats": "https://onemillionpats.com/"
+        }
+        let linksList = document.querySelector("#linksList");
+        for (let k in links) {
+            let elem = document.createElement("li");
+            let link = document.createElement("a");
+            link.innerHTML = k;
+            link.href = links[k];
+            elem.appendChild(link);
+            linksList.appendChild(elem);
+        }
+
+        function createList(listElement, array = ["puppydogs", "butterflies", "lollipops"]) {
+            for (let e of array) {
+                let elem = document.createElement("li");
+                elem.innerHTML = e;
+                listElement.appendChild(elem);
+            }
+        }
+        let createListArrow = (listElement, array = ["puppydogs", "butterflies", "lollipops"]) => {
+            for (let e of array) {
+                let elem = document.createElement("li");
+                elem.innerHTML = e;
+                listElement.appendChild(elem);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>WAL2</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+
+        p b {
+            transform: rotate(20deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    <h2>Info</h2>
+    <h2>Pictures</h2>
+    <h2>More Info</h2>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+    <footer>Copyright &copy; <b>20XX</b></footer>
+    <script>
+        "use strict";
+        // add your own code here.
+        document.querySelector("h1").innerHTML = "My UFO Page";
+        let h2s = document.querySelectorAll("h2");
+        h2s[0].innerHTML = "My UFO Info";
+        h2s[1].innerHTML = "My UFO Pictures";
+        h2s[2].innerHTML = "";
+
+        document.body.style.fontFamily = "sans-serif";
+        document.body.style.color = "#aa4444";
+
+        let p1 = document.querySelector("p");
+        p1.innerHTML = "Report your UFO sightings here: <a href='http://www.nuforc.org'>http://www.nuforc.org<a>";
+        p1.style.color = "green";
+        p1.style.fontWeight = "bold";
+        p1.style.fontSize = "2em";
+        p1.style.textTransform = "uppercase";
+        p1.style.textShadow = "3px 2px #A44";
+
+        let ps = document.querySelectorAll("p");
+        ps[1].innerHTML = "";
+        ps[2].innerHTML = "<img src='https://cdn.britannica.com/99/200099-050-5BBFA23F/UFO-farm-McMinnville-Oregon-1950.jpg' alt='UFO' style='max-width:100%'>";
+
+        document.querySelector("footer").innerHTML = "©2022 KS Vasquez";
+    </script>
+</body>
+
+</html>
