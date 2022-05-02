@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pixel Arteur</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<style>
+		span.cell {
+			height: 23px;
+			width: 23px;
+			border: 1px solid purple;
+			/* actual width & height is 25px because of border */
+			background-color: #ccc;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+		}
+
+		/* Get rid of the cell border when it is selected */
+		span.cellSelected {
+			height: 25px;
+			width: 25px;
+			background-color: red;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+		}
+
+		#gridContainer {
+			top: 5px;
+			left: 5px;
+			padding: 0;
+			display: inline-block;
+			position: absolute;
+		}
+
+		#colorChooser {
+			position: absolute;
+			top: 65px;
+			left: 800px;
+		}
+
+		h1 {
+			font-family: 'Press Start 2P', cursive;
+			display: inline-block;
+			position: absolute;
+			font-size: 1.3em;
+			top: 0;
+			left: 800px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="gridContainer"></div>
+	<h1>Pixel ArTeur</h1>
+	<select id="colorChooser">
+		<option value="aqua">Aqua</option>
+		<option value="Bisque">Bisque</option>
+		<option value="black">Black</option>
+		<option value="blue">Blue</option>
+		<option value="brown">Brown</option>
+		<option value="chocolate">Chocolate</option>
+		<option value="cyan">Cyan</option>
+		<option value="DarkGray">Dark Gray</option>
+		<option value="green">Green</option>
+		<option value="red" selected>Red</option>
+		<option value="magenta">Magenta</option>
+		<option value="orange">Orange</option>
+		<option value="tan">Tan</option>
+		<option value="white">White</option>
+		<option value="wheat">Wheat</option>
+		<option value="WhiteSmoke">WhiteSmoke </option>
+		<option value="yellow">Yellow</option>
+	</select>
+
+	<script>
+		const numCols = 30;
+		const numRows = 20;
+		const cellWidth = 25;
+		const cellSpacing = 1;
+
+		const container = document.querySelector("#gridContainer");
+
+		const span = document.createElement('span');
+		span.className = 'cell';
+
+		const cells = [[]];
+
+		for (let row = 0; row < numRows; row++) {
+			cells.push([]);
+			for (let col = 0; col < numCols; col++) {
+				let cell = span.cloneNode();
+				cell.style.left = `${col * (cellWidth + cellSpacing)}px`;
+				cell.style.top = `${row * (cellWidth + cellSpacing)}px`;
+				container.appendChild(cell);
+				cells[row][col] = cell;
+			}
+		}
+
+		let color = "red";
+		container.onclick = fillCell;
+
+		function fillCell(e) {
+			let rect = container.getBoundingClientRect();
+			let mouseX = e.clientX - rect.left;
+			let mouseY = e.clientY - rect.top;
+			let columnWidth = cellWidth + cellSpacing;
+			let col = Math.floor(mouseX / columnWidth);
+			let row = Math.floor(mouseY / columnWidth);
+			let selectedCell = cells[row][col];
+			selectedCell.className = "cellSelected";
+			selectedCell.style.backgroundColor = color;
+			console.log(`${col},${row}`);
+		}
+
+		let mouseIsDown = false;
+		container.onmousemove = (e) => {
+			e.preventDefault();
+			if (mouseIsDown) fillCell(e);
+		};
+		container.onmousedown = (e) => {
+			e.preventDefault();
+			mouseIsDown = true;
+		};
+		window.onmouseup = (e) => {
+			e.preventDefault();
+			mouseIsDown = false;
+		};
+
+		document.querySelector("#colorChooser").onchange = (e) => {
+			color = e.target.value;
+		};
+	</script>
+</body>
+
+</html>

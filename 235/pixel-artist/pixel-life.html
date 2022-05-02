@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Life</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="lifeworld.js"></script>
+</head>
+
+<body>
+    <div id="gridContainer"></div>
+    <h1>Life!</h1>
+    <select id="colorChooser">
+        <option value="aqua">Aqua</option>
+        <option value="Bisque">Bisque</option>
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="brown">Brown</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="cyan">Cyan</option>
+        <option value="DarkGray">Dark Gray</option>
+        <option value="green">Green</option>
+        <option value="red" selected>Red</option>
+        <option value="magenta">Magenta</option>
+        <option value="orange">Orange</option>
+        <option value="tan">Tan</option>
+        <option value="white">White</option>
+        <option value="wheat">Wheat</option>
+        <option value="WhiteSmoke">WhiteSmoke </option>
+        <option value="yellow">Yellow</option>
+    </select>
+
+    <input id="pause" type="button" value="Play">
+    <input id="clear" type="button" value="Clear">
+    <input id="random" type="button" value="Random">
+
+    <script>
+        const numCols = 70;
+        const numRows = 40;
+        const cellWidth = 10;
+        const cellSpacing = 1;
+
+        const container = document.querySelector("#gridContainer");
+
+        const span = document.createElement('span');
+        span.className = 'cell';
+
+        const cells = [[]];
+
+        for (let row = 0; row < numRows; row++) {
+            cells.push([]);
+            for (let col = 0; col < numCols; col++) {
+                let cell = span.cloneNode();
+                cell.style.left = `${col * (cellWidth + cellSpacing)}px`;
+                cell.style.top = `${row * (cellWidth + cellSpacing)}px`;
+                container.appendChild(cell);
+                cells[row][col] = cell;
+            }
+        }
+
+        let color = "red";
+        container.onclick = fillCell;
+
+        function fillCell(e) {
+            let rect = container.getBoundingClientRect();
+            let mouseX = e.clientX - rect.left;
+            let mouseY = e.clientY - rect.top;
+            let columnWidth = cellWidth + cellSpacing;
+            let col = Math.floor(mouseX / columnWidth);
+            let row = Math.floor(mouseY / columnWidth);
+            let selectedCell = cells[row][col];
+            // selectedCell.className = "cellSelected";
+            selectedCell.style.backgroundColor = color;
+            lifeworld.world[row][col] = 1;
+        }
+
+        let mouseIsDown = false;
+        container.onmousemove = (e) => {
+            e.preventDefault();
+            if (mouseIsDown) fillCell(e);
+        };
+        container.onmousedown = (e) => {
+            e.preventDefault();
+            mouseIsDown = true;
+        };
+        window.onmouseup = (e) => {
+            e.preventDefault();
+            mouseIsDown = false;
+        };
+
+        document.querySelector("#colorChooser").onchange = (e) => {
+            color = e.target.value;
+            updateGrid();
+        };
+
+        let pause = false;
+        document.querySelector("#pause").onclick = (e) => {
+            pause = !pause;
+            e.target.value = pause ? "Play" : "Pause";
+        }
+        document.querySelector("#clear").onclick = (e) => {
+            lifeworld.world = lifeworld.buildArray();
+            updateGrid();
+        };
+        document.querySelector("#random").onclick = (e) => {
+            lifeworld.randomSetup();
+        };
+
+        // Game of Life
+        let lastUpdate = performance.now();
+        let lastFrame = performance.now();
+        let maxFrameDelay = 1000 / 12;
+
+        lifeworld.init(numCols, numRows);
+        updateGrid();
+        pause = true;
+        loop(performance.now());
+
+        function loop(timestamp) {
+            requestAnimationFrame(loop);
+            lastUpdate = timestamp;
+            if (timestamp - lastFrame > maxFrameDelay) {
+                lastFrame = timestamp;
+                if (!pause) {
+                    lifeworld.step();
+                    updateGrid();
+                }
+            }
+        }
+        function updateGrid() {
+            for (let row = 0; row < numRows; row++) {
+                for (let col = 0; col < numCols; col++) {
+                    let element = cells[row][col];
+                    if (lifeworld.world[row][col] == 1) {
+                        element.style.backgroundColor = color;
+                    } else {
+                        element.style.backgroundColor = "white";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
