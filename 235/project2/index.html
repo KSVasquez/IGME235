@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&family=Murecho:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="js/main.js"></script>
+
+    <title>Seiyuu Lookup</title>
+</head>
+
+<body>
+    <header>
+        <h1>Seiyuu Lookup</h1>
+        <div id="controls">
+            <input id="searchField" type="search" placeholder="Search for an anime, e.g Sailor Moon...">
+
+            <select id="searchSort">
+                <option value="default" disabled hidden selected>Sort by:</option>
+                <option value="relevant">Relevant</option>
+                <option value="title desc">A–Z</option>
+                <option value="title asc">Z–A</option>
+                <option value="start_date desc">Recent</option>
+                <option value="start_date asc">Oldest</option>
+            </select>
+
+            <input id="searchButton" type="submit" value="Search">
+        </div>
+    </header>
+
+    <main>
+        <p id="status">Ready to search.</p>
+
+        <div id="results">
+            <h2>Results</h2>
+            <div id="content">
+                <i>Search anime for voice actors!</i>
+            </div>
+        </div>
+
+        <div id="navControls">
+            <input id="navBack" class="nav" type="button" value="Back">
+            <div id="pages"></div>
+            <input id="navNext" class="nav" type="button" value="Next">
+        </div>
+
+        <footer>
+            <p>K.S. Vasquez</p>
+            <p>Powered by <a href="https://jikan.moe/">Jikan v4</a></p>
+        </footer>
+    </main>
+</body>
+
+</html>
